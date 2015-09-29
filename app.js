@@ -89,6 +89,10 @@
                 "Other"
             ];
 
+        projects.sort(function (a, b) {
+            return b.yearStart - a.yearStart || (b.yearEnd === null ? 1 : -1);
+        });
+
         controller.list = projects;
         controller.languages = languages;
 

@@ -55,6 +55,13 @@ body {
     height: 100%;
 }
 
+@media (max-width: 991px) {
+    .col-md-6 {
+        float: left;
+        width: 100%;
+    }
+}
+
 @media (min-width: 768px) {
     .social-link {
         width: 48px;
@@ -85,6 +92,8 @@ body {
 
 .content-box {
     background-color: #333;
+    padding-top: 10px;
+    padding-bottom: 20px;
 }
 
 .language {
