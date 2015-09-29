@@ -59,9 +59,20 @@
                     <div>
                         <p class="language" ng-repeat="language in project.languages">{{ language }}</p>
                     </div>
-                    <p ng-show="project.site">
-                        <a href="{{ project.site }}" target="_blank">View site</a>
+                    <p class="description" ng-show="project.description">
+                        {{ project.description }}
                     </p>
+                    <div class="links">
+                        <p ng-show="project.site">
+                            <a href="{{ project.site }}" target="_blank"><span class="glyphicon glyphicon-eye-open"></span> View site</a>
+                        </p>
+                        <p ng-show="project.source">
+                            <a href="{{ project.source.url }}" target="_blank"><span class="glyphicon glyphicon-new-window"></span> {{ project.source.language }} source</a>
+                        </p>
+                        <p ng-show="project.download">
+                            <a href="files/{{ project.download.fileName }}" target="_blank"><span class="glyphicon glyphicon-download-alt"></span> Compiled {{ project.download.language }}</a>
+                        </p>
+                    </div>
                 </div>
             </div>
             <div class="content-box row" ng-show="selected('about')">

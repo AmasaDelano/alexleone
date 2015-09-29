@@ -47,7 +47,16 @@
                     name: "Ptolemy",
                     languages: ["Java", "C#"],
                     yearStart: 2009,
-                    yearEnd: 2014
+                    yearEnd: 2014,
+                    description: "Written as a school project. Simulates the movement of the planets according to the first astronomer, Ptolemy: the earth stands still and the sun and planets orbit around it. Calculations accurate based on his exact measurements. Written once in Java, then lost, then rewritten in C#.",
+                    source: {
+                        url: "https://github.com/AmasaDelano/Ptolemy",
+                        language: "C#"
+                    },
+                    download: {
+                        fileName: "PtolemyJava.zip",
+                        language: "Java"
+                    }
                 },
                 {
                     name: "The Farmer Game",

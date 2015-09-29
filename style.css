@@ -10,6 +10,8 @@ body {
 
 #name {
     text-align: center;
+    font-size: 3.5em;
+    margin: 25px 0;
 }
 
 .nav-button {
@@ -125,4 +127,9 @@ body {
     height: 22px;
     font-size: 16px;
     padding: 0;
+}
+
+.project .links p {
+    display: inline-block;
+    margin-right: 15px;
 }
