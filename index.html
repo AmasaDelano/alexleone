@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html ng-app="alexleone">
+    <head>
+        <title>Alex Leone - Programmer, Problem-Solver, Barrel-Rider</title>
+
+        <meta description="Alex Leone is a programmer, software developer, and solver of problems. He is always learning new things, which is the best part of being a programmer.">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="style.css" />
+
+    </head>
+    <body>
+        <div class="container">
+            <h1 id="name">
+                Alex Leone
+            </h1>
+            <nav ng-controller="TabController">
+                <div class="nav-button" ng-click="select('projects')" ng-class="{ 'selected': selected('projects') }">
+                    <p  ng-class="{ 'selected': selected('projects') }">
+                        Projects
+                    </p>
+                </div>
+                <div class="nav-button" ng-click="select('about')"ng-class="{ 'selected': selected('about') }">
+                    <p  ng-class="{ 'selected': selected('about') }">
+                        About
+                    </p>
+                </div>
+                <div class="nav-button link-buttons">
+                    <div class="social-link linkedin">
+                        <a href="https://www.linkedin.com/in/mralexleone" target="_blank"></a>
+                    </div>
+                    <div class="social-link github">
+                        <a href="https://github.com/AmasaDelano" target="_blank"></a>
+                    </div>
+                </div>
+            </nav>
+            <div class="content-box row" ng-show="selected('projects')" ng-controller="ProjectController as projects">
+                <div class="col-sm-6 project" ng-repeat="project in projects.list">
+                    <h2>{{ project.name }}</h2>
+                    <div><p class="language" ng-repeat="language in project.languages">{{ language }}</p></div>
+                    <p>{{ projects.getYearText(project) }}</p>
+                </div>
+            </div>
+            <div class="content-box row" ng-show="selected('about')">
+                <div class="col-xs-12">
+                    <h2>Alex Leone</h2>
+                    <p>
+                        has been programming computers to do things for over a decade and never tires of it. Beginning with BASIC games and text adventures programmed into his TI-84 up to the many websites he has made today, his driving belief has been that there is no programming language he can't learn to make do what he wants it to do.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+        <script src="app.js"></script>
+    </body>
+</html>    
