@@ -35,19 +35,22 @@
                     name: "Color Clock",
                     languages: ["Javascript", "CSS", "HTML"],
                     yearStart: 2015,
-                    yearEnd: 2015
+                    yearEnd: 2015,
+                    site: "http://www.aluminumexperiment.com/colorclock"
                 },
                 {
                     name: "Costume Selector",
                     languages: ["C#", "JavaScript", "Angular", "CSS", "HTML", "ASP.NET MVC"],
                     yearStart: 2015,
-                    yearEnd: 2015
+                    yearEnd: 2015,
+                    site: "http://www.gametable.me/costumes"
                 },
                 {
                     name: "Game Table",
                     languages: ["C#", "JavaScript", "CSS", "HTML", "ASP.NET MVC", "Angular", "jQuery"],
                     yearStart: 2015,
-                    yearEnd: null
+                    yearEnd: null,
+                    site: "http://gametable.me"
                 }
             ];
 

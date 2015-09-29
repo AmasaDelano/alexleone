@@ -11,6 +11,9 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
         <link rel="stylesheet" href="style.css" />
 
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+
     </head>
     <body>
         <div class="container">
@@ -40,8 +43,17 @@
             <div class="content-box row" ng-show="selected('projects')" ng-controller="ProjectController as projects">
                 <div class="col-sm-6 project" ng-repeat="project in projects.list">
                     <h2>{{ project.name }}</h2>
-                    <div><p class="language" ng-repeat="language in project.languages">{{ language }}</p></div>
-                    <p>{{ projects.getYearText(project) }}</p>
+                    <p>
+                        {{ projects.getYearText(project) }}
+                    </p>
+                    <div>
+                        <p class="language" ng-repeat="language in project.languages">
+                            {{ language }}
+                        </p>
+                    </div>
+                    <p ng-show="project.site">
+                        <a href="{{ project.site }}" target="_blank">View site</a>
+                    </p>
                 </div>
             </div>
             <div class="content-box row" ng-show="selected('about')">
