@@ -16,6 +16,30 @@
         $rootScope.select("projects");
     }]);
 
+    app.filter("language", function() {
+        return function (projects, language) {
+
+            if (!language) {
+                return projects;
+            }
+
+            return projects.filter(function(project) {
+                var languageIndex;
+
+                for (languageIndex = 0; languageIndex < project.languages.length; languageIndex += 1) {
+                    if (project.languages[languageIndex] === language) {
+                        return true;
+                    }
+                    if (language === "Other" && project.languages[languageIndex].indexOf("Other") !== -1) {
+                        return true;
+                    }
+                }
+
+                return false;
+            });
+        };
+    });
+
     app.controller("ProjectController", function () {
         var controller = this,
             projects = [
@@ -33,7 +57,7 @@
                 },
                 {
                     name: "Color Clock",
-                    languages: ["Javascript", "CSS", "HTML"],
+                    languages: ["JavaScript", "CSS", "HTML"],
                     yearStart: 2015,
                     yearEnd: 2015,
                     site: "http://www.aluminumexperiment.com/colorclock"
@@ -52,9 +76,33 @@
                     yearEnd: null,
                     site: "http://gametable.me"
                 }
+            ],
+            languages = [
+                "C#",
+                "JavaScript",
+                "HTML",
+                "CSS",
+                "Angular",
+                "ASP.NET MVC",
+                "Java",
+                "jQuery",
+                "Other"
             ];
 
         controller.list = projects;
+        controller.languages = languages;
+
+        (function () {
+            var showFilters = false;
+
+            controller.toggleFilters =  function () {
+                showFilters = !showFilters;
+            };
+
+            controller.showFilters = function () {
+                return showFilters;
+            };
+        }());
 
         controller.getYearText = function (project) {
             if (!project.yearEnd && project.yearStart) {

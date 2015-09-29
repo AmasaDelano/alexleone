@@ -1,6 +1,7 @@
 body {
     background-color: #111;
     color: #ccc;
+    padding-bottom: 50px;
 }
 
 .row {
@@ -95,4 +96,24 @@ body {
 }
 .language:last-child:after {
     content: "";
+}
+
+.btn-default {
+    background-color: #ddd;
+}
+.btn-default:hover,
+.btn-default:active {
+    background-color: #ccc;
+}
+
+#filter-button,
+#filters {
+    display: inline-block;
+    vertical-align: top;
+}
+#filters .form-control {
+    background-color: #ccc;
+    height: 22px;
+    font-size: 16px;
+    padding: 0;
 }

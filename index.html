@@ -41,15 +41,23 @@
                 </div>
             </nav>
             <div class="content-box row" ng-show="selected('projects')" ng-controller="ProjectController as projects">
-                <div class="col-sm-6 project" ng-repeat="project in projects.list">
+                <div class="col-xs-12">
+                    <button class="btn btn-xs btn-default" ng-click="projects.toggleFilters()" id="filter-button">
+                        <span class="glyphicon glyphicon-filter"></span>
+                    </button>
+                    <div id="filters" ng-show="projects.showFilters()">
+                        <select class="form-control" ng-model="projects.filterLanguage" ng-options="language for language in projects.languages">
+                            <option value="">Filter by language...</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6 project" ng-repeat="project in projects.list | language:projects.filterLanguage">
                     <h2>{{ project.name }}</h2>
                     <p>
                         {{ projects.getYearText(project) }}
                     </p>
                     <div>
-                        <p class="language" ng-repeat="language in project.languages">
-                            {{ language }}
-                        </p>
+                        <p class="language" ng-repeat="language in project.languages">{{ language }}</p>
                     </div>
                     <p ng-show="project.site">
                         <a href="{{ project.site }}" target="_blank">View site</a>
